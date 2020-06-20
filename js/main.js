@@ -7,19 +7,20 @@ const products = [
 
 
 const renderProduct = (title, price) => {
-    return `<div class="product-item">
-                <h3>${title}</h3>
-                <p>${price}</p>
-                <button class="btn btn-success">Добавить в корзину</button>
-                <img src="..." alt="image" class="img-thumbnail">
-              </div>`;
+    return `<div class="card" style="width: 18rem;">
+                    <img src="https://place-hold.it/300x200" alt="image" class="img-thumbnail">
+                    <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary" role="button">${price}</a>
+                    </div>
+            </div>`;
+    
 };
 
 const renderProducts = (list) => {
      const productList = list.map(item => renderProduct(item.title, item.price));
-//    const productList = list.map((item) => {
-//        return renderProduct(item.title, item.price);
-//    });
+
 
     document.querySelector('.products').innerHTML = productList.join(' ');
 };
